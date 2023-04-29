@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import TestView from '../views/TestView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,9 +10,19 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/test',
-      name: 'test',
-      component: TestView
+      path: '/tabel1',
+      name: 'tabel1',
+      component: () => import('../views/TabelView.vue')
+    },
+    {
+      path: '/tabel2',
+      name: 'tabel2',
+      component: () => import('../views/TabelViewDua.vue')
+    },
+    {
+      path: '/tabel3',
+      name: 'tabel3',
+      component: () => import('../views/TabelViewTiga.vue')
     },
     {
       path: '/about',
