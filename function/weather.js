@@ -36,11 +36,11 @@ router.get("/", async (req, res) => {
   return res.json(weatherData[0]);
 });
 
-app.use(cors({
-  origin: 'http://127.0.0.1:5173',
-  methods: ['GET'],
-  allowedHeaders: ['application/json']
-}));
+// app.use(cors({
+//   origin: 'http://127.0.0.1:5173',
+//   methods: ['GET'],
+//   allowedHeaders: ['application/json']
+// }));
 app.use(bodyParser.json());
 app.use("/.netlify/functions/weather", router); // path must route to lambda
 
