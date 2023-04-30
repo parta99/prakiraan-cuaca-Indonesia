@@ -8,6 +8,9 @@
             <slot> </slot> 
             <slot name="paragraf"></slot>
         </p>
+        <h3>
+          <slot name="h3"></slot>
+        </h3>
       </div>
     </div>
   </template>
@@ -32,7 +35,7 @@
   }
   p {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
 
   }
   h1 {
