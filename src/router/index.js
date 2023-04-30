@@ -17,12 +17,12 @@ const router = createRouter({
     {
       path: '/tabel-dua',
       name: 'tabel-dua',
-      component: () => import('../views/TabelViewDua.vue')
+      component: () => import('../views/TabelDuaView.vue')
     },
     {
       path: '/tabel-tiga',
       name: 'tabel-tiga',
-      component: () => import('../views/TabelViewTiga.vue')
+      component: () => import('../views/TabelTigaView.vue')
     },
     {
       path: '/about',
