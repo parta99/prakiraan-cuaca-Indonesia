@@ -1,0 +1,5 @@
+[build]
+  command = "npm install && npm run get:data && npm run build"
+  functions = "./functions"
+[dev]
+  functions = "./functions"
