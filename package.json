@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "get:data": "node ./resource/resource.js",
+    "colect:data": "node ./resource/resource.js",
     "tailwind": "tailwindcss -i ./src/assets/main.css -o ./src/assets/styles.css --watch",
     "build": "vite build",
     "preview": "vite preview"
