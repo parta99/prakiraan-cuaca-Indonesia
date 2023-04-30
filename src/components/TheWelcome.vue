@@ -77,9 +77,10 @@ import SupportIcon from './icons/IconSupport.vue'
     <template #icon>
       <SupportIcon />
     </template>
-    <template #heading>Support Vue</template>
-    As an independent project, Vue relies on community backing for its sustainability. You can help
-    us by
-    <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
+    <template #heading>Created with ❤ </template>
+    You can find me on: <a class="px-2 bg-pink-700 rounded-sm text-white hover:text-slate-300" href="https://www.github.com/parta99">Github</a>, <a class="px-2 bg-pink-700 rounded-sm text-white hover:text-slate-300" href="https://www.linkedin.com/gede-juniada"> LinkedIn</a>, <a class="px-2 bg-pink-700 rounded-sm text-white hover:text-slate-300" href="https://www.twitter.com/djna911">Twitter</a>,
+    <a class="px-2 bg-pink-700 rounded-sm text-white hover:text-slate-300" href="https://www.instagram.com/djna911">Instagram</a> 
+    I regularly share updates, insights, and behind-the-scenes looks at my creative process on these platforms, so don't hesitate to give me a follow and say hello. Looking forward to connecting with you!
+    <a href="https://gedejuniada.netlify.app/" target="_blank" rel="noopener">DE Juniada</a>.
   </WelcomeItem>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <form id="search" class=" text-white px-4 py-3 border-spacing-2">
+    <form id="search" class=" text-gray-700  px-4 py-3 border-spacing-2">
         <input name="query" placeholder="Cari Kota atau Provinsi" class=" bg-white rounded-md px-4" v-model="searchQuery">
     </form>
     <div class=" min-w-full w-auto">
@@ -41,8 +41,8 @@
 
           <li v-if="paginationLinks[paginationLinks.length - 1] < totalPages.valueOf - 1">...</li>
           <!-- Add First and Last page buttons -->
-          <li class="page-item" :class="{ 'disabled': currentPage === totalPages.valueOf }">
-            <button class="page-link" @click="currentPage < totalPages.valueOf && currentPage++">Next</button>
+          <li class="page-item" :class="{ 'disabled': currentPage === totalPages }">
+            <button class="page-link" @click="currentPage < totalPages && currentPage++">Next</button>
           </li>
         </ul>
       </nav>
@@ -61,7 +61,7 @@ export default defineComponent ({
   components: {},
   setup() {
     const searchQuery = ref('')
-    const perPage = ref(10)
+    const perPage = ref(8)
     const currentPage = ref(1)
     const columns = ['Provinsi', 'Kota', 'Tanggal', 'Suhu', 'Cuaca Siang', 'Cuaca Malam']
     const jsonData = ref([])

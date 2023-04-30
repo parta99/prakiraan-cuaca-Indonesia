@@ -1,5 +1,5 @@
 <template>
-  <form id="search" class=" text-white px-4 py-4 border-spacing-2">
+  <form id="search" class=" text-gray-700 px-4 py-4 border-spacing-2">
       <input name="query" placeholder="Cari Kota atau Provinsi" class=" bg-white rounded-md px-4" v-model="searchQuery">
   </form>
   <div class="">
@@ -62,7 +62,7 @@ export default defineComponent ({
   components: {},
   setup() {
     const searchQuery = ref('')
-    const perPage = ref(10)
+    const perPage = ref(8)
     const currentPage = ref(1)
     const columns = ['Provinsi', 'Kota', 'Tanggal', 'Suhu', 'Cuaca Siang', 'Cuaca Malam']
     const jsonData = ref([])
