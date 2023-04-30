@@ -10,18 +10,18 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/tabel1',
-      name: 'tabel1',
+      path: '/tabel-satu',
+      name: 'tabel-satu',
       component: () => import('../views/TabelView.vue')
     },
     {
-      path: '/tabel2',
-      name: 'tabel2',
+      path: '/tabel-dua',
+      name: 'tabel-dua',
       component: () => import('../views/TabelViewDua.vue')
     },
     {
-      path: '/tabel3',
-      name: 'tabel3',
+      path: '/tabel-tiga',
+      name: 'tabel-tiga',
       component: () => import('../views/TabelViewTiga.vue')
     },
     {

@@ -3,7 +3,7 @@
       <input name="query" placeholder="Cari Kota atau Provinsi" class=" bg-white rounded-md px-4" v-model="searchQuery">
   </form>
   <div class="">
-    <table class="table table-bordered table-striped">
+    <table v-if="filteredData.length > 0">
       <thead>
         <tr>
           <th v-for="column in columns" :key="column">{{ column }}</th>
@@ -11,6 +11,7 @@
       </thead>
       <tbody>
           <tr v-for="data in paginatedData" :key="data.kota">
+          <!-- <tr v-for="(data, index) in paginatedData" :key="data.kota"> -->
           <td>{{ data.provinsi }}</td>
           <td>{{ data.kota }}</td>
           <td>{{ formatDate(data.parameter[0].date) }}</td>
@@ -20,26 +21,29 @@
         </tr>
       </tbody>
     </table>
+    <div v-else class="pesan">
+      Data tidak ditemukan.
+    </div>
     <div class="paginated">
       <nav aria-label="Page navigation">
         <ul class="pagination">
-          <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
-            <button class="page-link" @click="currentPage--" :disabled="currentPage === 1">Previous</button>
-          </li>
           <!-- Add First and Last page buttons -->
+          <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
+            <button class="page-link" @click="currentPage > 1 && currentPage--">Previous</button>
+          </li>
+
           <li v-if="paginationLinks[0] > 1">
             <button class="page-link" @click="currentPage = 1">1</button>
           </li>
           <li v-if="paginationLinks[0] > 2">...</li>
-
           <li v-for="n in paginationLinks" :key="n" class="page-item" :class="{ 'active': currentPage === n }">
             <button class="page-link" @click="currentPage = n">{{ n }}</button>
           </li>
-
           <li v-if="paginationLinks[paginationLinks.length - 1] < totalPages.valueOf - 1">...</li>
-
-          <li class="page-item" :class="{ 'disabled': currentPage === totalPages.valueOf }">
-            <button class="page-link" @click="currentPage++" :disabled="currentPage === totalPages.valueOf">Next</button>
+          
+          <!-- Add First and Last page buttons -->
+          <li class="page-item" :class="{ 'disabled': currentPage === totalPages }">
+            <button class="page-link" @click="currentPage < totalPages && currentPage++">Next</button>
           </li>
         </ul>
       </nav>
@@ -58,7 +62,7 @@ export default defineComponent ({
   components: {},
   setup() {
     const searchQuery = ref('')
-    const perPage = ref(5)
+    const perPage = ref(10)
     const currentPage = ref(1)
     const columns = ['Provinsi', 'Kota', 'Tanggal', 'Suhu', 'Cuaca Siang', 'Cuaca Malam']
     const jsonData = ref([])
@@ -102,7 +106,7 @@ export default defineComponent ({
         end = Math.min(5, totalPages.value)
       } else if (totalPages.value - end <= 2) {
         start = Math.max(totalPages.value - 4, 1)
-        // end = totalPages.value
+        end = totalPages.value
       }
 
       const arr = []
@@ -165,6 +169,9 @@ export default defineComponent ({
           return '-'
       }
     }
+    // function capitalize(str) {
+    //   return str.charAt(0).toUpperCase() + str.slice(1)
+    // }
 
     return {
       searchQuery,
@@ -184,6 +191,19 @@ export default defineComponent ({
 });
 </script>
 <style scoped>
+.page-item.active button {
+  background-color: blue;
+  color: white;
+}
+
+.pesan{
+  font-weight: 700;
+  padding-left: 2rem;
+  color: #ff0000;
+  background-color: white;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 0.25rem;
+}
 button{
   background-color: #374151;
   color: #f59e0b; 
@@ -196,9 +216,9 @@ button{
   font-weight: 700;
   border-radius: 0.25rem;
 }
-
 .paginated{
   padding-top: 2rem;
+  justify-content: center;
   display: flex;
   flex-direction: row;
 }
@@ -231,7 +251,7 @@ th, td {
     white-space: nowrap;
   }
   th {
-    background-color: #f2f2f2;
+    background-color: #374151;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
