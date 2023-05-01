@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TabelSatu from '../views/TabelView.vue'
-import TabelDua from '../views/TabelDuaView.vue'
+import TabelDua from '../views/TabelKeduaView.vue'
 import TabelTiga from '../views/TabelTigaView.vue'
 
 const router = createRouter({
