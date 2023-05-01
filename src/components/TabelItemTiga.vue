@@ -67,8 +67,7 @@ export default defineComponent ({
     const jsonData = ref([])
 
     // axios.get('./data/weather.json')
-    // axios.get('https://api-cuaca-bmkg.netlify.app/data/weather.json/')
-    axios.get('https://api-cuaca.netlify.app/data/weather.json/')
+    axios.get('https://api-cuaca-bmkg.netlify.app/data/weather.json/')
       .then(response => jsonData.value = response.data)
       .catch(error => console.log(error))
   
