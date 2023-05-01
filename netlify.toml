@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && npm run start:api"
+  command = "npm run build && npm run dev"
   publish = "client/dist"
   functions = "./functions"
 
