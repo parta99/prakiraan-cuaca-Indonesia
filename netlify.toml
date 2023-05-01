@@ -1,6 +1,6 @@
 [build]
-  command = "npm install && npm run colect:data && npm run serve"
-  functions = "./functions"
+  command = "npm run build"
+  publish = "client/dist"
 
 [dev]
-  functions = "./functions"
+  command = "npm run dev"
