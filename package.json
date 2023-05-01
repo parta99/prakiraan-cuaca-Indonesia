@@ -7,7 +7,7 @@
     "dev": "vite",
     "colect:data": "node ./resource/resource.js",
     "tailwind": "tailwindcss -i ./src/assets/main.css -o ./src/assets/styles.css --watch",
-    "build": "vite build",
+    "serve": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
