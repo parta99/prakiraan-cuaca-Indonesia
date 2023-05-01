@@ -9,7 +9,7 @@
     "start:api": "node ./resource/resource.js",
     "start:client": "cd client && npm run start",
     "tailwind": "tailwindcss -i ./src/assets/main.css -o ./src/assets/styles.css --watch",
-    "serve": "vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
