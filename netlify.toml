@@ -21,8 +21,3 @@
   from = "/data/*"
   to = "/.netlify/functions/data"
   status = 200
-
-[[redirects]]
-  from = "/.netlify/functions/data/*"
-  to = "/data/:splat"
-  status = 200
