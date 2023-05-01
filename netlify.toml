@@ -1,9 +1,8 @@
 [build]
-  command = "npm install && npm run colect:data && npm run build"
+  command = "npm install && npm run colect:data && npm run serve"
   functions = "./functions"
 
 [dev]
-  command = "npm run dev"
   functions = "./functions"
 
 [[redirects]]
