@@ -1,0 +1,7 @@
+functions:
+  data:
+    handler: server/app.handler
+    events:
+      - http:
+          path: data
+          method: GET

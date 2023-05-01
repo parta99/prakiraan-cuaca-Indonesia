@@ -5,3 +5,24 @@
 [dev]
   command = "npm run dev"
   functions = "./functions"
+
+  [[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/app/:splat"
+  status = 200
+  force = true
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/data/*"
+  to = "/.netlify/functions/data"
+  status = 200
+
+[[redirects]]
+  from = "/.netlify/functions/data/*"
+  to = "/data/:splat"
+  status = 200
