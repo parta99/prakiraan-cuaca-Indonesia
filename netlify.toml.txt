@@ -1,6 +1,0 @@
-[build]
-  command = "npm install && npm run colect:data && npm run serve"
-  functions = "./functions"
-
-[dev]
-  functions = "./functions"
