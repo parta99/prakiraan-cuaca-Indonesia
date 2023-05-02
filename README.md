@@ -1,6 +1,8 @@
 # prakiraan-cuaca-Indonesia 
 ### [BMKG](https://data.bmkg.go.id/prakiraan-cuaca/) (Badan Meteorologi, Klimatologi, dan Geofisika) sebagai sumber data
 
+#### [https://api-cuaca-bmkg.netlify.app/](https://api-cuaca-bmkg.netlify.app/)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
