@@ -612,6 +612,14 @@ video {
   display: table;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-auto {
   width: auto;
 }
@@ -678,6 +686,11 @@ video {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {

@@ -2,7 +2,7 @@
   <form id="search" class=" text-gray-700 px-4 py-4 border-spacing-2">
       <input name="query" placeholder="Cari Kota atau Provinsi" class=" bg-white rounded-md px-4" v-model="searchQuery">
   </form>
-  <div class="">
+  <div class="min-w-full w-auto">
     <table v-if="filteredData.length > 0">
       <thead>
         <tr>
@@ -27,9 +27,9 @@
     <div class="paginated">
       <nav aria-label="Page navigation">
         <ul class="pagination">
-          <!-- Add First and Last page buttons -->
+          
           <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
-            <button class="page-link" @click="currentPage > 1 && currentPage--">Previous</button>
+            <button class="page-link" @click="currentPage > 1 && currentPage--"><IconPrevious /></button>
           </li>
 
           <li v-if="paginationLinks[0] > 1">
@@ -40,10 +40,9 @@
             <button class="page-link" @click="currentPage = n">{{ n }}</button>
           </li>
           <li v-if="paginationLinks[paginationLinks.length - 1] < totalPages.valueOf - 1">...</li>
-          
-          <!-- Add First and Last page buttons -->
+           
           <li class="page-item" :class="{ 'disabled': currentPage === totalPages }">
-            <button class="page-link" @click="currentPage < totalPages && currentPage++">Next</button>
+            <button class="page-link" @click="currentPage < totalPages && currentPage++"><IconNext /></button>
           </li>
         </ul>
       </nav>
@@ -51,6 +50,8 @@
   </div>
 </template>
 <script>
+import IconPrevious from './icons/IconPrevious.vue'
+import IconNext from './icons/IconNext.vue'
 import { defineComponent } from 'vue'
 import DemoGrid from './Grid.vue'
 import moment from 'moment'
@@ -59,7 +60,7 @@ import axios from 'axios'
 
 export default defineComponent ({
   name: 'TabelCuaca',
-  components: {},
+  components: {IconPrevious, IconNext},
   setup() {
     const searchQuery = ref('')
     const perPage = ref(8)

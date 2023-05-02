@@ -17,6 +17,7 @@ data
 function
 resource
 
+.txt
 /cypress/videos/
 /cypress/screenshots/
 

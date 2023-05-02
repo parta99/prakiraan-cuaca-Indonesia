@@ -28,7 +28,7 @@
         <ul class="pagination">
           <!-- Add First and Last page buttons -->
           <li class="page-item" :class="{ 'disabled': currentPage === 1 }">
-            <button class="page-link" @click="currentPage > 1 && currentPage--">Previous</button>
+            <button class="page-link" @click="currentPage > 1 && currentPage--"><IconPrevious /></button>
           </li>
           <li v-if="paginationLinks[0] > 1">
             <button class="page-link" @click="currentPage = 1">1</button>
@@ -42,7 +42,7 @@
           <li v-if="paginationLinks[paginationLinks.length - 1] < totalPages.valueOf - 1">...</li>
           <!-- Add First and Last page buttons -->
           <li class="page-item" :class="{ 'disabled': currentPage === totalPages }">
-            <button class="page-link" @click="currentPage < totalPages && currentPage++">Next</button>
+            <button class="page-link" @click="currentPage < totalPages && currentPage++"><IconNext /></button>
           </li>
         </ul>
       </nav>
@@ -50,7 +50,9 @@
   </div>
 </template>
 <script>
-  import { defineComponent } from 'vue'
+import IconPrevious from './icons/IconPrevious.vue'
+import IconNext from './icons/IconNext.vue'
+import { defineComponent } from 'vue'
 import DemoGrid from './Grid.vue'
 import moment from 'moment'
 import { ref, computed } from 'vue'
@@ -58,7 +60,7 @@ import axios from 'axios'
 
 export default defineComponent ({
   name: 'TabelCuaca',
-  components: {},
+  components: { IconPrevious, IconNext },
   setup() {
     const searchQuery = ref('')
     const perPage = ref(8)
@@ -215,10 +217,6 @@ button{
   margin-right: 0.25rem;
   font-weight: 700;
   border-radius: 0.25rem;
-}
-button.active{
-  background-color: #f59e0b;
-  color: #374151;
 }
 .paginated{
   padding-top: 2rem;
