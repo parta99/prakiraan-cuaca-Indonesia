@@ -1,9 +1,9 @@
 <template>
   <form id="search" class=" text-gray-700 px-4 py-4 border-spacing-2">
-      <input name="query" placeholder="Cari Kota atau Provinsi" class=" bg-white rounded-md px-4" v-model="searchQuery">
+      <input name="query" placeholder="Cari Kota atau Provinsi" class="search" v-model="searchQuery">
   </form>
-  <div class="min-w-full w-auto">
-    <table v-if="filteredData.length > 0">
+  <div class="min-w-full w-auto border border-solid border-gray-500">
+    <table class="border border-solid border-gray-700" v-if="filteredData.length > 0">
       <thead>
         <tr>
           <th v-for="column in columns" :key="column">{{ column }}</th>
@@ -53,7 +53,6 @@
 import IconPrevious from './icons/IconPrevious.vue'
 import IconNext from './icons/IconNext.vue'
 import { defineComponent } from 'vue'
-import DemoGrid from './Grid.vue'
 import moment from 'moment'
 import { ref, computed } from 'vue'
 import axios from 'axios'
@@ -182,7 +181,6 @@ export default defineComponent ({
       formatDate,
       getTemperature,
       getWeather,
-      DemoGrid,
       perPage,
       currentPage,
       totalPages,
@@ -198,6 +196,13 @@ export default defineComponent ({
   background-color: blue;
   color: white;
 }
+.search{
+  height: 2rem;
+  padding-left: 1rem;
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
 
 .pesan{
   font-weight: 700;
@@ -205,23 +210,23 @@ export default defineComponent ({
   color: #ff0000;
   background-color: white;
   padding: 1rem 1rem 1rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
 }
 button{
   background-color: #374151;
   color: #f59e0b; 
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
   margin-left: 0.25rem;
   margin-right: 0.25rem;
   font-weight: 700;
   border-radius: 0.25rem;
 }
 .paginated{
-  padding-top: 2rem;
-  justify-content: center;
+  padding-top: 1rem;
+  justify-content: end;
   display: flex;
   flex-direction: row;
 }
@@ -238,10 +243,9 @@ table {
 th{
   background-color: #374151;
 }
-
 th, td {
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 4px;
+  border: 8px solid #000;
 }
 
 /* Responsive table styling for mobile view */
