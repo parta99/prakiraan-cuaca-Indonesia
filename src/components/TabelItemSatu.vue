@@ -1,9 +1,9 @@
 <template>
-  <form id="search" class=" text-gray-700 px-4 py-4 border-spacing-2">
+  <form id="search" class=" text-gray-700 px-4 py-3 border-spacing-2">
       <input name="query" placeholder="Cari Kota atau Provinsi" class="search" v-model="searchQuery">
   </form>
   <div class="min-w-full w-auto border border-solid border-gray-500">
-    <table class="border border-solid border-gray-700" v-if="filteredData.length > 0">
+    <table v-if="filteredData.length > 0">
       <thead>
         <tr>
           <th v-for="column in columns" :key="column">{{ column }}</th>
@@ -53,6 +53,7 @@
 import IconPrevious from './icons/IconPrevious.vue'
 import IconNext from './icons/IconNext.vue'
 import { defineComponent } from 'vue'
+import DemoGrid from './Grid.vue'
 import moment from 'moment'
 import { ref, computed } from 'vue'
 import axios from 'axios'
@@ -181,6 +182,7 @@ export default defineComponent ({
       formatDate,
       getTemperature,
       getWeather,
+      DemoGrid,
       perPage,
       currentPage,
       totalPages,
@@ -226,7 +228,7 @@ button{
 }
 .paginated{
   padding-top: 1rem;
-  justify-content: end;
+  justify-content: flex-end;
   display: flex;
   flex-direction: row;
 }
@@ -245,7 +247,7 @@ th{
 }
 th, td {
   padding: 4px;
-  border: 8px solid #000;
+  border: 1px solid #374151;
 }
 
 /* Responsive table styling for mobile view */

@@ -227,8 +227,8 @@ button{
 }
 .paginated{
   padding-top: 1rem;
-  justify-content: end;
   display: flex;
+  justify-content: flex-end;
   flex-direction: row;
 }
 .pagination{
@@ -246,7 +246,7 @@ th{
 }
 th, td {
   padding: 4px;
-  border: 8px solid #000;
+  border: 1px solid #374151;
 }
 
 /* Responsive table styling for mobile view */
