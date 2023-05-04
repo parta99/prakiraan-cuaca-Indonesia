@@ -246,7 +246,7 @@ th{
 }
 th, td {
   padding: 4px;
-  border: 1px solid #374151;
+  border: 1px solid #ddd;
 }
 
 /* Responsive table styling for mobile view */
