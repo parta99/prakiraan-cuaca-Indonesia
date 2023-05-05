@@ -42,7 +42,7 @@ p{
 }
 span{
     padding-left: 0.375rem;
-    color: aqua;
+    color: #f59e0b;
     border-radius: 0.375rem;
 }
 </style>
